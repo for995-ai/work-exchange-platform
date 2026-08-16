@@ -23,6 +23,10 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          # package.json declares no packageManager field, so the version is
+          # pinned here to match the local toolchain that produced the lockfile.
+          version: 11
 
       - name: Setup Node
         uses: actions/setup-node@v4
